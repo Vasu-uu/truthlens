@@ -1,4 +1,8 @@
-# TruthLens: Deepfake & AI-Fraud Shield
+<p align="center">
+  <img src="docs/img/logo.png" alt="TruthLens logo: a cyan lens with a viewfinder on a dark rounded square" width="160" height="160">
+</p>
+
+<h1 align="center">TruthLens: Deepfake & AI-Fraud Shield</h1>
 
 Check a suspicious **image**, **voice note** or **message** and get a risk score, the **evidence behind it**, an honest confidence level and **what to do next**. Built for everyday people in India (UPI, OTP, KYC, "digital arrest" and fake-relative scams), for Codefestthon 2026 (AI/ML track).
 
