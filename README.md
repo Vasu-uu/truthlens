@@ -4,7 +4,63 @@ Check a suspicious **image**, **voice note** or **message** and get a risk score
 
 > TruthLens never says "100% fake" or "100% real". Detectors are imperfect; every verdict comes with signals, confidence and limitations. See [docs/LIMITATIONS.md](docs/LIMITATIONS.md).
 
-<!-- Screenshots: add docs/img/analyzer.png, result.png, extension.png -->
+## Screenshots
+
+All captured from the running app on a CPU-only laptop. The sample inputs are the ones in `backend/samples/`: a scam message, a text-to-speech voice clip and a real public-domain photo.
+
+### 1. Paste or upload, then analyse
+Four tabs (Image, Voice, Message, Combined), drag-and-drop or mic recording, and a reminder that nothing is stored.
+
+![Analyzer with a scam message pasted in](docs/img/01-analyzer.jpg)
+
+### 2. A verdict you can check: a "son in trouble" message
+Score **74/100, High risk**, with high confidence. Suspicious phrases are highlighted and labelled by tactic (family emergency, authority claim, urgency, secrecy), and the UPI ID and amount are pulled out.
+
+![High-risk message result with highlighted phrases](docs/img/02-message-result.jpg)
+
+### 3. Evidence and what to do next
+Every signal was measured or matched, strongest first; tap one for the plain-language reason. Next steps are India-specific (call back on the saved number, never share an OTP, report at 1930 / cybercrime.gov.in).
+
+![Signal cards and the what-to-do-next checklist](docs/img/03-evidence-next-steps.jpg)
+
+### 4. Combined mode: message + voice + photo
+The three checks side by side. Here the message scores 74 and the synthetic-voice clip 65 (Medium). The real photo correctly stays low (29), so it does not drag the verdict down or inflate it. Because the message follows a known scam script and is backed by a suspicious voice, the combined score gets a +10 bonus: **77/100, High**.
+
+![Combined result with per-check cards and the pattern-match banner](docs/img/04-combined-result.jpg)
+
+### 5. Voice: waveform and spectrogram
+Play the clip and see its waveform and mel spectrogram, so you can judge the sound yourself.
+
+![Voice panel with waveform and spectrogram](docs/img/05-voice-spectrogram.jpg)
+
+### 6. Image: where the detector looked
+A Grad-CAM attention map you can slide against the original, with an Error Level Analysis toggle. This is a *real* photo, and the map is explicitly labelled as "where the model looked, not proof of editing".
+
+![Image panel with heat-map compare slider](docs/img/06-image-heatmap.jpg)
+
+### 7. Limitations are always on screen
+Every result ends with the limitations that apply, expanded by default, plus the models that produced it.
+
+![Limitations section](docs/img/08-limitations.jpg)
+
+### 8. Samples gallery
+One-click demo inputs so a demo never depends on uploads, and a "Run combined demo" button for the family-emergency scenario. "Source label" is where a sample came from, not TruthLens's verdict.
+
+![Samples gallery](docs/img/07-samples.jpg)
+
+### 9. How it works
+The pipeline and an honest summary of what each check can and cannot tell you.
+
+![How it works page with pipeline diagram](docs/img/09-how-it-works.jpg)
+
+### 10. Phone-sized screens
+
+<img src="docs/img/10-mobile.jpg" alt="Result on a 375 px wide phone screen" width="300">
+
+### 11. Chrome extension side panel
+The extension's `panel.html` / `panel.js` rendering a real backend result. *This capture was taken with the extension's panel code served as a normal page and a stubbed `chrome` API; the extension itself has not yet been screenshotted inside Chrome.*
+
+<img src="docs/img/11-extension-panel.jpg" alt="Extension side panel showing a high-risk result" width="320">
 
 ## Features
 - **Image:** AI-image classifier, EXIF / embedded-generator / C2PA-claim checks, Error Level Analysis, frequency check, face count, Grad-CAM attention heat map with a compare slider.

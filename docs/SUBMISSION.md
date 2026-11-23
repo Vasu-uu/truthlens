@@ -18,6 +18,21 @@ TruthLens accepts an **image**, a **voice note** (including WhatsApp `.opus`) an
 - **Grounded explanations:** an LLM (optional) may only restate signals and must cite their ids; ungrounded or overconfident sentences are dropped, with a template fallback that needs no API key.
 - **Privacy:** files are processed in memory and discarded; history keeps only verdict summaries in the browser.
 
+## Screenshots
+Captured from the running app (CPU-only laptop). Source repo: https://github.com/Vasu-uu/truthlens. Full captions are in the README.
+
+| What it shows | Image |
+| --- | --- |
+| "Son in trouble" message → High risk (74/100), phrases highlighted by tactic | https://raw.githubusercontent.com/Vasu-uu/truthlens/main/docs/img/02-message-result.jpg |
+| Evidence signals + India-specific next steps | https://raw.githubusercontent.com/Vasu-uu/truthlens/main/docs/img/03-evidence-next-steps.jpg |
+| Combined message + voice + photo → 77/100 with cross-modal pattern banner | https://raw.githubusercontent.com/Vasu-uu/truthlens/main/docs/img/04-combined-result.jpg |
+| Voice waveform and spectrogram | https://raw.githubusercontent.com/Vasu-uu/truthlens/main/docs/img/05-voice-spectrogram.jpg |
+| Grad-CAM attention map with compare slider | https://raw.githubusercontent.com/Vasu-uu/truthlens/main/docs/img/06-image-heatmap.jpg |
+| Limitations shown with every result | https://raw.githubusercontent.com/Vasu-uu/truthlens/main/docs/img/08-limitations.jpg |
+| Chrome extension side panel (panel code rendered outside Chrome) | https://raw.githubusercontent.com/Vasu-uu/truthlens/main/docs/img/11-extension-panel.jpg |
+
+In the combined shot the message and the synthetic-voice clip are the suspicious inputs; the photo is a real public-domain image and correctly stays low. We have not yet shown an AI-generated image in the demo.
+
 ## Tech stack
 Python, FastAPI, PyTorch, Hugging Face Transformers, librosa, OpenCV, scikit-image, pytorch-grad-cam · React, Vite, TypeScript, Tailwind CSS · Chrome Manifest V3 extension · Docker Compose · pytest.
 
