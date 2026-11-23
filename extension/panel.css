@@ -1,0 +1,29 @@
+:root { color-scheme: dark; --bg:#0b1020; --panel:#121a30; --line:#263252; --ink:#e6ecff; --mute:#94a3c8; --accent:#22d3ee; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,"Segoe UI",Roboto,sans-serif; padding:14px; }
+header { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+h1 { font-size:18px; margin:0; }
+.logo { width:22px; height:22px; border-radius:50%; border:3px solid var(--accent); position:relative; }
+.logo::after { content:""; position:absolute; inset:4px; background:var(--accent); border-radius:50%; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:12px; margin-bottom:12px; }
+.muted { color:var(--mute); font-size:12px; }
+.badge { display:inline-flex; align-items:center; gap:8px; border:1px solid; border-radius:999px; padding:4px 12px; font-weight:700; }
+.low { color:#6ee7b7; border-color:#34d39980; background:#34d3991a; }
+.medium { color:#fcd34d; border-color:#fbbf2480; background:#fbbf241a; }
+.high { color:#fca5a5; border-color:#f8717180; background:#f871711a; }
+.score { font-size:40px; font-weight:800; line-height:1; margin:8px 0; }
+h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); margin:0 0 8px; }
+ul { margin:0; padding-left:18px; }
+li { margin-bottom:6px; }
+.sig { list-style:none; padding:0; }
+.sig li { border:1px solid var(--line); border-radius:8px; padding:8px; }
+.sig b { display:block; }
+.tag { font-size:11px; font-weight:700; }
+.tag.suspicious { color:#fca5a5; } .tag.reassuring { color:#6ee7b7; } .tag.neutral { color:var(--mute); }
+a.btn { display:block; text-align:center; background:var(--accent); color:#04222a; font-weight:800; text-decoration:none; border-radius:10px; padding:10px; }
+.err { border-color:#f8717180; background:#450a0a99; }
+.pulse { height:10px; border-radius:6px; background:linear-gradient(90deg,#18223d 25%,#243157 50%,#18223d 75%); background-size:400px 100%; animation:s 1.2s infinite linear; margin:8px 0; }
+@keyframes s { to { background-position:400px 0; } }
+footer { margin-top:8px; color:var(--mute); font-size:11px; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+@media (prefers-reduced-motion: reduce) { .pulse { animation:none; } }

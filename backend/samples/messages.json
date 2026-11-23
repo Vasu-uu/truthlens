@@ -1,0 +1,14 @@
+[
+  {"id": "msg-scam-son-in-trouble", "title": "Son in trouble (UPI)", "expected": "scam",
+   "text": "Mom I changed my number, this is my new number. I'm in trouble, got into an accident and the police are asking for Rs 25,000 immediately. Please send to rahul.k2291@oksbi right now and don't tell papa."},
+  {"id": "msg-scam-bank-kyc", "title": "Bank KYC link", "expected": "scam",
+   "text": "Dear customer, your SBI account will be blocked today. Update your KYC immediately at http://sbi-kyc-update.xyz/login and share the OTP you receive."},
+  {"id": "msg-scam-digital-arrest", "title": "Digital arrest call", "expected": "scam",
+   "text": "This is CBI officer Sharma. A parcel in your name contains narcotics and a case has been registered against you. You are under digital arrest. Do not disconnect the video call and tell no one. Pay Rs 80,000 to clear your name."},
+  {"id": "msg-scam-job-fee", "title": "Work-from-home job fee", "expected": "scam",
+   "text": "Congratulations! Work from home part time job, earn Rs 5000 per day. Pay registration fee Rs 999 to confirm your offer letter today."},
+  {"id": "msg-legit-otp", "title": "Genuine OTP notice", "expected": "legit",
+   "text": "482913 is your OTP for login to your account. Do not share it with anyone. Valid for 10 minutes. -Amazon"},
+  {"id": "msg-legit-friend", "title": "Friend making plans", "expected": "legit",
+   "text": "Hey, are we still meeting for lunch tomorrow at 1? I'll book the table near the station. Let me know if you want to change it."}
+]

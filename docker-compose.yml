@@ -1,0 +1,28 @@
+# docker compose up --build   ->  app on http://localhost:5173, API on http://localhost:8000
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      CORS_ORIGINS: "http://localhost:5173"
+    volumes:
+      - hf_cache:/models   # model weights are downloaded once, then reused
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: "http://localhost:8000"
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  hf_cache:
